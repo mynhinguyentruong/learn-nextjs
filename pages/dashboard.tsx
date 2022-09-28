@@ -11,7 +11,7 @@ export default function Post({ allPosts }: Data) {
   return (
     <ul>
       {allPosts.map((post) => (
-        <li>{post.title}</li>
+        <li key={post.id}>{post.title}</li>
       ))}
     </ul>
   );
