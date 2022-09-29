@@ -1,5 +1,6 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
+import { getIronSession } from "iron-session";
 
 export async function middleware(request: NextRequest) {
   console.log("middle ware run");
