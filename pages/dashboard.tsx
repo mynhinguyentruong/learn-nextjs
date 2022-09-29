@@ -1,5 +1,6 @@
 import allPosts from "../data/posts.json";
 
+
 type Data = {
   allPosts: {
     id: number;

@@ -7,7 +7,7 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source:'/dashboard',
+        source:'/dashboard', // not working correctly
         has: [
           {
             type: 'cookie',
@@ -17,6 +17,20 @@ const nextConfig = {
         ],
         destination: '/login',
         permanent: true
+      }
+    ]
+  },
+  async headers() {
+    return [
+      {
+        source: '/dashboard',
+        headers: [
+        
+          {
+            key: 'authorization',
+            value: 'true'
+          }
+        ]
       }
     ]
   }
