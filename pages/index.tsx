@@ -2,9 +2,11 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
+    <>
     <div className={styles.container}>
       <Head>
         <title>Next.js App</title>
@@ -14,12 +16,11 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h2 className="mt-6 text-center text-xl font-medium tracking-tight text-gray-900">
-          <a
-            href="/login"
-            className="bg-gray-700 text-white px-3 py-2 rounded-md hover:bg-white hover:text-gray-900"
-          >
-            Sign in
-          </a>{" "}
+          <Link href="/login">
+            <a className="bg-gray-700 text-white px-3 py-2 rounded-md hover:bg-white hover:text-gray-900">
+              Sign in {" "}
+            </a>
+          </Link>
           to your account to see details
         </h2>
         <Image src="/vercel.svg" alt="Vercel Logo" width={300} height={300} />
@@ -35,6 +36,7 @@ const Home: NextPage = () => {
         </a>
       </footer>
     </div>
+    </>
   );
 };
 

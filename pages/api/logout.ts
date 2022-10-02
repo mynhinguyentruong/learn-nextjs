@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import cookie from "cookie";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     console.log("log out ran");
     await res.setHeader(
