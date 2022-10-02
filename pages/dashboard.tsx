@@ -1,5 +1,6 @@
 import allPosts from "../data/posts.json";
 const jwt = require("jsonwebtoken");
+import { useRouter } from 'next/router'
 
 type Data = {
   allPosts: {
@@ -9,13 +10,15 @@ type Data = {
 };
 
 export default function Post({ allPosts }: Data) {
+  const { reload } = useRouter()
+
   const handleLogout = async () => {
     try {
       await fetch("/api/logout", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({}),
-      }).then(() => {});
+      }).then(() => reload());
       await fetch('/api/revalidate?secret=123abc');
     } catch (err) {
       console.log(err);
